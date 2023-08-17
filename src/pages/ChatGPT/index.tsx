@@ -6,15 +6,22 @@ import CryptoJS from 'crypto-js';
 const ChatPage: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
+  const [messageCount, setMessageCount] = useState(0);
 
   const handleSendMessage = async () => {
     if (inputValue.trim() === '') {
       return;
     }
 
+    if (messageCount >= 5) {
+      message.error('您已达到消息限制，不能继续发送。');
+      return;
+    }
+
     const userMessage = createChatMessage('user', inputValue);
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     setInputValue('');
+    setMessageCount((prevCount) => prevCount + 1);
 
     try {
       const aiResponse = await callXFYunTTS(inputValue);
@@ -43,9 +50,7 @@ const ChatPage: React.FC = () => {
     } catch (error) {
       throw new Error('讯飞TTS API调用错误: ' + error.message);
     }
-
   };
-
   const getWebsocketUrl = async (apiKey: string, apiSecret: string) => {
     const url = 'wss://tts-api.xfyun.cn/v2/tts';
     const host = location.host;
@@ -67,7 +72,11 @@ const ChatPage: React.FC = () => {
         <Divider>聊天</Divider>
         <div className="chat-container">
           {messages.map((message, index) => (
-            <div key={index} className={`chat-message ${message.sender}`}>
+            <div
+              key={index}
+              className={`chat-message ${message.sender === 'ai' ? 'ai-message' : 'user-message'}`}
+              style={{ justifyContent: message.sender === 'ai' ? 'flex-start' : 'flex-end' }}
+            >
               {message.text}
             </div>
           ))}
