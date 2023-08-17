@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Card, Divider, message } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
+import CryptoJS from 'crypto-js';
 
 const ChatPage: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -16,11 +17,11 @@ const ChatPage: React.FC = () => {
     setInputValue('');
 
     try {
-      const aiResponse = await callOpenAI(inputValue);
+      const aiResponse = await callXFYunTTS(inputValue);
       const aiMessage = createChatMessage('ai', aiResponse);
       setMessages((prevMessages) => [...prevMessages, aiMessage]);
     } catch (error) {
-      console.error('Error calling OpenAI:', error);
+      console.error('调用讯飞TTS时出错:', error);
       message.error('无法获取AI响应');
     }
   };
@@ -29,34 +30,36 @@ const ChatPage: React.FC = () => {
     return { sender, text };
   };
 
-  const callOpenAI = async (input: string) => {
-    const apiKey = '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';
-    const prompt = input;
-    const max_tokens = 50;
-    const engine = 'text-davinci-003';
+  const callXFYunTTS = async (input: string) => {
+    const API_KEY = 'xxx'; // 用您的API密钥替换
+    const API_SECRET = 'xxx'; // 用您的API密钥替换
+    const url = await getWebsocketUrl(API_KEY, API_SECRET);
 
-    const response = await fetch('https://api.openai.com/v1/engines/' + engine + '/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + apiKey,
-      },
-      body: JSON.stringify({ prompt, max_tokens }),
-    });
+    // 调用讯飞TTS API的逻辑
+    // ...
 
-    const data = await response.json();
+    return '讯飞TTS响应'; // 用实际API响应替换
+  };
 
-    if (data.choices && data.choices.length > 0) {
-      return data.choices[0].text;
-    } else {
-      throw new Error('No AI response');
-    }
+  const getWebsocketUrl = async (apiKey: string, apiSecret: string) => {
+    const url = 'wss://tts-api.xfyun.cn/v2/tts';
+    const host = location.host;
+    const date = new Date().toGMTString();
+    const algorithm = 'hmac-sha256';
+    const headers = 'host date request-line';
+    const signatureOrigin = `host: ${host}\ndate: ${date}\nGET /v2/tts HTTP/1.1`;
+    const signatureSha = CryptoJS.HmacSHA256(signatureOrigin, apiSecret);
+    const signature = CryptoJS.enc.Base64.stringify(signatureSha);
+    const authorizationOrigin = `api_key="${apiKey}", algorithm="${algorithm}", headers="${headers}", signature="${signature}"`;
+    const authorization = btoa(authorizationOrigin);
+    const websocketUrl = `${url}?authorization=${authorization}&date=${date}&host=${host}`;
+    return websocketUrl;
   };
 
   return (
     <div className="chat-page">
       <Card>
-        <Divider>聊天dev-待开发中</Divider>
+        <Divider>聊天</Divider>
         <div className="chat-container">
           {messages.map((message, index) => (
             <div key={index} className={`chat-message ${message.sender}`}>
