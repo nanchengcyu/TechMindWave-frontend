@@ -36,9 +36,12 @@ const ChatPage: React.FC = () => {
     const url = await getWebsocketUrl(API_KEY, API_SECRET);
 
     // 调用讯飞TTS API的逻辑
-    // ...
+    const response = await fetch(url, {
+      method: 'GET', // 或者使用WebSocket等方式调用API
+    });
+    const data = await response.text();
 
-    return '讯飞TTS响应'; // 用实际API响应替换
+    return data; // 返回实际的API响应数据
   };
 
   const getWebsocketUrl = async (apiKey: string, apiSecret: string) => {
