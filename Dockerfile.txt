@@ -10,3 +10,5 @@ COPY ./dist  /usr/share/nginx/html/
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
+
+#根据实际情况修改
