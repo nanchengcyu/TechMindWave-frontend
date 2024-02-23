@@ -7,7 +7,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import {  ProFormText } from '@ant-design/pro-components';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
 import { Helmet, history, useModel } from '@umijs/max';
-import { message, Tabs } from 'antd';
+import {Button, message, Tabs} from 'antd';
 import React, { useState } from 'react';
 import { flushSync } from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
@@ -161,8 +161,12 @@ const Login: React.FC = () => {
               />
             </>
           )}
-          <div style={{ marginBottom: '20px' }}>
-            <Link to="/user/login">老用户？</Link>
+          <div style={{textAlign: 'center', marginBottom: '20px'}}>
+            <Link to="/user/login">
+              <Button type="primary" block style={{height: '40px'}}>
+                返回登录
+              </Button>
+            </Link>
           </div>
         </LoginFormPage>
       </div>

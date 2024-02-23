@@ -1,4 +1,4 @@
-import {GithubOutlined, WechatOutlined} from '@ant-design/icons';
+import {GithubOutlined, WechatOutlined, YuqueFilled} from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-components';
 import '@umijs/max';
 import React from 'react';
@@ -24,7 +24,11 @@ const Footer: React.FC = () => {
       links={[
         {
           key: '欢迎你加入星球 ',
-          title: '学习圈子',
+          title: (
+            <>
+              <YuqueFilled />  语雀 - 南城余学习笔记
+            </>
+          ),
           href: WELCOME,
           blankTarget: true,
         },
