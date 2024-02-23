@@ -1,4 +1,4 @@
-此分支master 是毕设优化分支
+此分支master 是毕设优化分支<br>
 详情文档请看main分支  https://github.com/nanchengcyu/TechMindWave-frontend/tree/main
 
 -----------------------------
