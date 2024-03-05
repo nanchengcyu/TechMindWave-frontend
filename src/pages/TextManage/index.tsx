@@ -143,6 +143,12 @@ const MyTextPage: React.FC = () => {
           </List.Item>
         )}
       />
+      <div className="tip">
+        <a href="https://www.yuque.com/yuque/gpvawt/lnobo9" target="_blank" style={{ color: '#1890ff' }} rel="noreferrer">
+          什么是markdown？点击此处了解
+        </a>
+        <br/>
+      </div>
     </div>
   );
 };

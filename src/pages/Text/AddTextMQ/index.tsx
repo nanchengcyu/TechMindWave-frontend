@@ -81,8 +81,14 @@ const AddTextMQ: React.FC = () => {
           </Form.Item>
 
         </Form>
+
         <div className="tip">
+          <a href="https://www.yuque.com/yuque/gpvawt/lnobo9" target="_blank" style={{ color: '#1890ff' }} rel="noreferrer">
+            什么是markdown？点击此处了解
+          </a>
+          <br/>
           <a href="/person/user_info" style={{ color: '#1890ff' }}>
+
             领取每日智能转换文本次数获取请到个人中心个人信息页面-点击文字-跳转
           </a>
         </div>
