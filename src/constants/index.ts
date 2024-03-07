@@ -57,6 +57,19 @@ export const CHART_TYPE_SELECT = [
   { value: '堆叠条形图', label: '堆叠条形图' },
   { value: '玫瑰图', label: '玫瑰图' },
 ];
+export const ESSAY_TYPE_SELECT = [
+  { value: '记叙文', label: '记叙文' },
+  { value: '议论文', label: '议论文' },
+  { value: '说明文', label: '说明文' },
+  { value: '描写文', label: '描写文' },
+  { value: '应用文', label: '应用文' },
+  { value: '新闻报道', label: '新闻报道' },
+  { value: '散文', label: '散文' },
+  { value: '诗歌', label: '诗歌' },
+
+
+
+];
 
 /**
  * 默认头像

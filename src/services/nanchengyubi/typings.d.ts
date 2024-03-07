@@ -228,6 +228,18 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseEssay_ = {
+    code?: number;
+    data?: Essay;
+    message?: string;
+  };
+
+  type BaseResponseEssayResponse_ = {
+    code?: number;
+    data?: EssayResponse;
+    message?: string;
+  };
+
   type BaseResponseListAiFrequencyOrderVO_ = {
     code?: number;
     data?: AiFrequencyOrderVO[];
@@ -288,6 +300,12 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponsePageEssay_ = {
+    code?: number;
+    data?: PageEssay_;
+    message?: string;
+  };
+
   type BaseResponsePageTextTask_ = {
     code?: number;
     data?: PageTextTask_;
@@ -345,6 +363,11 @@ declare namespace API {
     genChart?: string;
     genResult?: string;
     goal?: string;
+  };
+
+  type biUsingPOSTParams = {
+    /** message */
+    message: string;
   };
 
   type Chart = {
@@ -444,6 +467,54 @@ declare namespace API {
     id?: number;
   };
 
+  type Essay = {
+    createTime?: string;
+    essayName?: string;
+    essayType?: string;
+    genEssay?: string;
+    id?: number;
+    isDelete?: number;
+    updateTime?: string;
+    userId?: number;
+  };
+
+  type EssayAddRequest = {
+    essayName?: string;
+    essayType?: string;
+  };
+
+  type EssayEditRequest = {
+    essayName?: string;
+    essayType?: string;
+    id?: number;
+  };
+
+  type EssayQueryRequest = {
+    current?: number;
+    essayName?: string;
+    essayType?: string;
+    id?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
+    userId?: number;
+  };
+
+  type EssayResponse = {
+    essayContent?: string;
+    essayTitle?: string;
+    essayType?: string;
+  };
+
+  type EssayUpdateRequest = {
+    essayName?: string;
+    essayType?: string;
+    genEssay?: string;
+    id?: number;
+    isDelete?: number;
+    userId?: number;
+  };
+
   type genChartByAiAsyncMqUsingPOSTParams = {
     chartName?: string;
     chartType?: string;
@@ -466,6 +537,11 @@ declare namespace API {
     questionGoal?: string;
     questionName?: string;
     questionType?: string;
+  };
+
+  type genEssayUsingPOSTParams = {
+    essayName?: string;
+    essayType?: string;
   };
 
   type genTextTaskAiUsingPOSTParams = {
@@ -493,6 +569,11 @@ declare namespace API {
   };
 
   type getCreditByIdUsingGETParams = {
+    /** id */
+    id?: number;
+  };
+
+  type getEssayByIdUsingGETParams = {
     /** id */
     id?: number;
   };
@@ -597,6 +678,19 @@ declare namespace API {
     orders?: OrderItem[];
     pages?: number;
     records?: Credit[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
+
+  type PageEssay_ = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: Essay[];
     searchCount?: boolean;
     size?: number;
     total?: number;
