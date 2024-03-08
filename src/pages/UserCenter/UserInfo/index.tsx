@@ -26,9 +26,7 @@ const avatarStyle: React.CSSProperties = {
   width: '100%',
   textAlign: 'center',
 };
-const buttonStyle: React.CSSProperties = {
-  marginLeft: '30px',
-};
+
 
 /**
  * 上传前校验
@@ -195,7 +193,7 @@ const UserInfo: React.FC = () => {
   useEffect(() => {
     try {
       loadData();
-      getUserInfo(initialState?.currentUser?.id).then((r) => {});
+      getUserInfo(initialState?.currentUser?.id).then(() => {});
       // console.log('用户信息', initialState?.currentUser);
     } catch (e: any) {
       console.log(e);
@@ -247,7 +245,14 @@ const UserInfo: React.FC = () => {
     </div>
   );
 
-  return (
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
+    // @ts-ignore
+    return (
     <>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>

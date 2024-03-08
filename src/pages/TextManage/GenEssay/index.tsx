@@ -65,6 +65,8 @@ const MyEssayPage: React.FC = () => {
     });
   };
 
+  // @ts-ignore
+  // @ts-ignore
   return (
     <div className="my-essay-page">
       <div className="margin-20">
@@ -109,11 +111,11 @@ const MyEssayPage: React.FC = () => {
 
             </Card>
             <br/>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <div style={{ fontSize: '14px', color: 'gray' }}>
-                {'文章生成时间：' + new Date(item.createTime).toLocaleString()}
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <div style={{ fontSize: '14px', color: 'gray' }}>
+                      {'图表生成时间：' + (item.createTime ? new Date(item.createTime).toLocaleString() : '未知时间')}
+                  </div>
               </div>
-            </div>
 
 
           </List.Item>

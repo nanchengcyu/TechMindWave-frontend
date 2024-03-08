@@ -89,6 +89,7 @@ const MyChartPage: React.FC = () => {
     });
   };
 
+  // @ts-ignore
   return (
     <div className="my-chart-page">
       <div className="margin-20">
@@ -172,10 +173,12 @@ const MyChartPage: React.FC = () => {
                     </p>
 
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <div style={{ fontWeight: 'bold', fontSize: '14px' }}>
-                        {'图表生成时间：' + new Date(item.createTime).toLocaleString()}
+                      <div style={{ fontSize: '14px', color: 'gray' }}>
+                        {'图表生成时间：' + (item.createTime ? new Date(item.createTime).toLocaleString() : '未知时间')}
                       </div>
                     </div>
+
+
                   </>
                 )}
               </Card>
