@@ -7,7 +7,7 @@ import Search from 'antd/es/input/Search';
 import ReactECharts from 'echarts-for-react';
 import React, { useEffect, useState } from 'react';
 
-const AminChartPage: React.FC = () => {
+const AdminChartPage: React.FC = () => {
   /**
    * 初始值
    */
@@ -99,6 +99,7 @@ const AminChartPage: React.FC = () => {
     });
   };
 
+  // @ts-ignore
   return (
     <div className="admin-chart-page">
       <div className="margin-20">
@@ -231,4 +232,4 @@ const AminChartPage: React.FC = () => {
     </div>
   );
 };
-export default AminChartPage;
+export default AdminChartPage;

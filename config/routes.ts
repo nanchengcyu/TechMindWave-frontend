@@ -41,7 +41,7 @@
       { path: '/ai_question/history', name: '智能分析结果', icon: 'smile', component: './AiChatAssistant/AiChatManage' },
     ],
   },
-  { path: '/gen_chart', name: '图表中心', icon: 'icon-bingtutubiao', component: './ChartManage' },
+  { path: '/gen_chart', name: '图表中心', icon: 'FundTwoTone', component: './ChartManage' },
 
 
   {
@@ -81,6 +81,7 @@
       { path: '/admin/user_manage', name: '用户管理', component: './Admin/UserManage' },
       { path: '/admin/adduser', name: '添加用户', component: './Admin/AddUser' },
       { path: '/admin/chart_manage', name: '图表管理', component: './Admin/ChartManage' },
+      { path: '/admin/essay_manage', name: '文章管理',component: './Admin/EssayManage' },
       { path: '/admin/chat_manage', name: '对话管理', component: './Admin/AiChatManage' },
       { path: '/admin/user_order_manage', name: '订单管理', component: './Admin/UserOrderManage' },
       { path: '/admin/user_pay_order_manage', name: '管理员支付订单', component: './Admin/UserPayOrderManage' },
