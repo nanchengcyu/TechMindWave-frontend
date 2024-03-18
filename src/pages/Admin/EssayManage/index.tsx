@@ -2,7 +2,10 @@ import { useModel } from '@@/exports';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Avatar, Button, Card, List, message, Modal, Input } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { deleteEssayUsingPOST, listMyEssayByPageUsingPOST } from "@/services/nanchengyubi/essayController";
+import {
+  deleteEssayUsingPOST,
+  listEssayByPageUsingPOST,
+} from "@/services/nanchengyubi/essayController";
 
 const { Search } = Input;
 
@@ -25,7 +28,7 @@ const MyEssayPage: React.FC = () => {
   const loadData = async () => {
     setLoading(true);
     try {
-      let res = await listMyEssayByPageUsingPOST(searchParams);
+      let res = await listEssayByPageUsingPOST(searchParams);
       if (res.data) {
         setEssayList(res.data.records ?? []);
         setEssayTotal(res.data.total ?? 0);
