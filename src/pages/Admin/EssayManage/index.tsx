@@ -1,4 +1,3 @@
-import { useModel } from '@@/exports';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Avatar, Button, Card, List, message, Modal, Input } from 'antd';
 import React, { useEffect, useState } from 'react';
@@ -6,6 +5,8 @@ import {
   deleteEssayUsingPOST,
   listEssayByPageUsingPOST,
 } from "@/services/nanchengyubi/essayController";
+// @ts-ignore
+import {useModel} from "@umijs/max";
 
 const { Search } = Input;
 

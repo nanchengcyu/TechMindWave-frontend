@@ -34,7 +34,7 @@
   },
   {
     path: '/ai_question',
-    name: ' 智能分析',
+    name: ' 智能回答',
     icon: 'MessageTwoTone',
     routes: [
       { path: '/ai_question/assistant', name: '智能分析问题', icon: 'smile', component: './AiChatAssistant/AddChat' },

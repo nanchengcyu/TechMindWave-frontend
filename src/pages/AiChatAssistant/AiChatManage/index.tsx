@@ -1,12 +1,14 @@
-import { Avatar, Button, Card, Col, Divider, List, message, Modal, Result, Row } from 'antd';
-import React, { useEffect, useState } from 'react';
+import {Avatar, Button, Card, Col, Divider, List, message, Modal, Result, Row} from 'antd';
+import React, {useEffect, useState} from 'react';
 
+
+import ReactMarkdown from 'react-markdown';
 import {
   deleteAiAssistantUsingPOST,
   listMyAiAssistantByPageUsingPOST,
 } from '@/services/nanchengyubi/AiAssistantController';
-import { useModel } from '@@/exports';
-import { ExclamationCircleOutlined } from '@ant-design/icons';
+import {useModel} from '@@/exports';
+import {ExclamationCircleOutlined} from '@ant-design/icons';
 import Search from 'antd/es/input/Search';
 
 const ChatManage: React.FC = () => {
@@ -29,8 +31,8 @@ const ChatManage: React.FC = () => {
   /**
    * 获取当前用户
    */
-  const { initialState } = useModel('@@initialState');
-  const { currentUser } = initialState || {};
+  const {initialState} = useModel('@@initialState');
+  const {currentUser} = initialState || {};
 
   const initData = async () => {
     try {
@@ -61,13 +63,13 @@ const ChatManage: React.FC = () => {
   const handleDelete = (chartId: any) => {
     Modal.confirm({
       title: '确认删除',
-      icon: <ExclamationCircleOutlined />,
+      icon: <ExclamationCircleOutlined/>,
       content: '确定要删除此对话吗？',
       okText: '确认',
       cancelText: '取消',
       onOk: async () => {
         try {
-          const res = await deleteAiAssistantUsingPOST({ id: chartId });
+          const res = await deleteAiAssistantUsingPOST({id: chartId});
           console.log('res:', res.data);
           if (res.data) {
             message.success('删除成功');
@@ -119,13 +121,13 @@ const ChatManage: React.FC = () => {
         dataSource={data}
         renderItem={(item) => (
           <List.Item key={item.id}>
-            <Card style={{ width: '100%' }}>
+            <Card style={{width: '100%'}}>
               <List.Item.Meta
-                avatar={<Avatar src={currentUser?.userAvatar} />}
+                avatar={<Avatar src={currentUser?.userAvatar}/>}
                 title={currentUser?.userName}
               />
               <>
-                {item.questionStatus == 'wait' && (
+                {item.questionStatus === 'wait' && (
                   <>
                     <Result
                       status="warning"
@@ -141,9 +143,9 @@ const ChatManage: React.FC = () => {
                     </Row>
                   </>
                 )}
-                {item.questionStatus == 'running' && (
+                {item.questionStatus === 'running' && (
                   <>
-                    <Result status="info" title="AI正在解答中...." subTitle={item.execMessage} />
+                    <Result status="info" title="AI正在解答中...." subTitle={item.execMessage}/>
                     <Row justify={'end'}>
                       <Col>
                         <Button danger onClick={() => handleDelete(item.id)}>
@@ -153,7 +155,7 @@ const ChatManage: React.FC = () => {
                     </Row>
                   </>
                 )}
-                {item.questionStatus == 'succeed' && (
+                {item.questionStatus === 'succeed' && (
                   <>
                     <p
                       style={{
@@ -166,28 +168,28 @@ const ChatManage: React.FC = () => {
                       {'原问题：' + item.questionGoal}
                     </p>
 
-                    <List.Item.Meta
-                      style={{ textAlign: 'left', fontWeight: 'bold', whiteSpace: 'pre' }}
-                      description={
-                        item.questionType
-                          ? '问题类型：' + item.questionType + '\t\t 问题名称：' + item.questionName
-                          : ' '
-                      }
-                    />
 
-                    <Divider style={{ fontWeight: 'bold', color: 'blue', fontSize: '16px' }}>
+                    <Divider style={{fontWeight: 'bold', color: 'blue', fontSize: '16px'}}>
                       AI解答
                     </Divider>
-                    <div style={{ whiteSpace: 'pre-wrap', overflow: 'auto' }}>
-                      {item?.questionResult}
+                    <div style={{
+                      maxHeight: '400px', // 限制最大高度为400px
+                      overflow: 'auto', // 在需要时提供滚动条
+                      padding: '10px', // 提供一些内部空间以增强可读性
+                      border: '1px solid #ddd', // 可选，为了更好的视觉隔离，您可以加上边框
+                      borderRadius: '4px', // 可选，圆角边框看起来更柔和
+                    }}>
+                      <ReactMarkdown>
+                        {item?.questionResult ?? ''}
+                      </ReactMarkdown>
                     </div>
 
-                    <Divider />
-                    <Row justify={'start'}>
-                      <Col style={{ color: 'black', fontWeight: 'bold' }}>
-                        {'AI解答时间：' + new Date(item.createTime).toLocaleString()}
-                      </Col>
-                    </Row>
+                    <Divider/>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                      <div style={{fontSize: '14px', color: 'gray'}}>
+                        {'ai回答时间：' + (item.createTime ? new Date(item.createTime).toLocaleString() : '未知时间')}
+                      </div>
+                    </div>
                     <Row justify={'end'}>
                       <Col>
                         <Button danger onClick={() => handleDelete(item.id)}>
@@ -197,11 +199,11 @@ const ChatManage: React.FC = () => {
                     </Row>
                   </>
                 )}
-                {item.questionStatus == 'failed' && (
+                {item.questionStatus === 'failed' && (
                   <>
-                    <Result status="error" title="AI解答失败" subTitle={item.execMessage} />
+                    <Result status="error" title="AI解答失败" subTitle={item.execMessage}/>
                     <Row justify="end">
-                      <Col style={{ paddingRight: '10px' }}>
+                      <Col style={{paddingRight: '10px'}}>
                         <Button type="primary" onClick={() => message.warning('敬请期待')}>
                           重试
                         </Button>
