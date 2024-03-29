@@ -65,10 +65,10 @@ const AddChart: React.FC = () => {
 
               <Form.Item
                 name="essayName"
-                label="文章标题"
-                rules={[{ required: true, message: '请输入文章标题！' }]}
+                label="文章描述"
+                rules={[{ required: true, message: '请输入文章描述！' }]}
               >
-                <TextArea placeholder="请输入文章标题" />
+                <TextArea placeholder="请输入文章描述" />
               </Form.Item>
 
               <Form.Item
@@ -114,7 +114,7 @@ const AddChart: React.FC = () => {
                 </div>
               ) : (
                 <div style={{ textAlign: 'center', fontSize: '16px' }}>
-                  请先在左边生成！
+                  请先在左边输入必填项，即可自动生成文章
                 </div>
               )}
               <Spin spinning={submitting} size="large" />

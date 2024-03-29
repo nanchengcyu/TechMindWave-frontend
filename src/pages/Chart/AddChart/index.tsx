@@ -55,7 +55,7 @@ const AddChart: React.FC = () => {
     <div className="add-chart">
       <div className="tip">
         <a href="/person/user_info" style={{ color: '#1890ff' }}>
-          领取每日智能分析图表次数获取请到个人中心个人信息页面-点击文字-跳转
+          每日智能分析图表次数获取请到个人中心个人信息页面进行充值-点击文字-跳转
         </a>
       </div>
       <Row gutter={24}>
