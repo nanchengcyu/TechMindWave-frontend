@@ -252,7 +252,8 @@ const UserInfo: React.FC = () => {
   // @ts-ignore
   // @ts-ignore
     // @ts-ignore
-    return (
+    // @ts-ignore
+  return (
     <>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>

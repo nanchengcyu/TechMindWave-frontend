@@ -1,5 +1,5 @@
 import {genChartByAiAsyncMqUsingPOST,} from '@/services/nanchengyubi/ChartController';
-import {Button, Card, Col, Divider, Form, message, Row, Select, Space, Spin, Upload} from 'antd';
+import {Button, Card,  Divider, Form, message,  Select, Space,  Upload} from 'antd';
 import React, {useState} from 'react';
 import {UploadOutlined} from '@ant-design/icons';
 import TextArea from 'antd/es/input/TextArea';
@@ -106,7 +106,8 @@ const AsyncAddChart: React.FC = () => {
                 确定上传
               </Button>
               <Button htmlType="reset">重置内容</Button>
-              <a href="https://www.yuque.com/kcsshier/zpovmy/lab4hgt8rf9d6sia?singleDoc# 《TechMindWave系统测试数据下载》"
+              <a href="https://www.yuque.com/kcsshier/zpovmy/lab4hgt8rf9d6sia?singleDoc# 《TechMindWave系统测试数据下载》 "
+                 rel="noreferrer"
                  target='_blank'>
                 <Button
                   block
