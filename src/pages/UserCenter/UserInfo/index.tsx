@@ -267,7 +267,7 @@ const UserInfo: React.FC = () => {
               name="file"
               listType="picture-circle"
               showUploadList={false}
-              action="http://localhost:8103/api/oss/upload"
+              action="http://localhost:8001/api/oss/upload"
               // action="http://bi.kongshier.top/api/oss/upload"
               beforeUpload={beforeUpload}
               onChange={handleChange}

@@ -39,7 +39,7 @@ const MyChartPage: React.FC = () => {
   const loadData = async () => {
     setLoading(loading);
     try {
-      let res = await listChartByPageUsingPOS(searchParams);
+      let res = await listChartByPageUsingPOST(searchParams);
       if (res.data) {
         setChartList(res.data.records ?? []);
         setChartTotal(res.data.total ?? 0);
