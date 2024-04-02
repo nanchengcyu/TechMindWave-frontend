@@ -42,6 +42,7 @@ const ViewChart: React.FC = () => {
     viewChart();
   }, []);
 
+  // @ts-ignore
   return (
     <div className="view-chart-data">
       <Row gutter={24}>
@@ -75,7 +76,12 @@ const ViewChart: React.FC = () => {
               <Col span={6}>分析目标：{chart?.goal}</Col>
               <Col span={6}>图表类型：{chart?.chartType}</Col>
               <Col span={6}>图表名称：{chart?.chartName}</Col>
-              <Col span={6}>分析目标：{new Date(chart?.createTime).toLocaleString('zh-CN')}</Col>
+              <Col span={6}>
+                分析目标：{
+                new Date(chart?.createTime || Date.now()).toLocaleString('zh-CN')
+              }
+              </Col>
+
             </Row>
             <Spin spinning={submitting} />
           </Card>

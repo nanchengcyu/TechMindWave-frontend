@@ -34,7 +34,7 @@ const avatarStyle: React.CSSProperties = {
  */
 const beforeUpload = (file: RcFile) => {
   const isJpgOrPng =
-    file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg';
+      file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg';
   if (!isJpgOrPng) {
     message.error('仅允许上传 JPG/PNG 格式的文件!');
   }
@@ -62,19 +62,19 @@ const UserInfo: React.FC = () => {
     updateTime: '',
   });
   const renderSuccessModal = () => (
-    <Modal
-      title="修改成功"
-      visible={successModalVisible}
-      onOk={() => {
-        setSuccessModalVisible(false);
-        window.location.reload(); // 刷新页面
-      }}
-      onCancel={() => setSuccessModalVisible(false)}
-      centered
-      okText="确定"
-    >
-      您的信息已成功修改！
-    </Modal>
+      <Modal
+          title="修改成功"
+          visible={successModalVisible}
+          onOk={() => {
+            setSuccessModalVisible(false);
+            window.location.reload(); // 刷新页面
+          }}
+          onCancel={() => setSuccessModalVisible(false)}
+          centered
+          okText="确定"
+      >
+        您的信息已成功修改！
+      </Modal>
   );
   const [creditInfo, setCreditInfo] = useState<number>();
   const [submitting, setSubmitting] = useState<boolean>(false);
@@ -239,10 +239,10 @@ const UserInfo: React.FC = () => {
   };
 
   const uploadButton = (
-    <div>
-      {loading ? <LoadingOutlined /> : <PlusOutlined />}
-      <div style={{ marginTop: 8 }}>Upload</div>
-    </div>
+      <div>
+        {loading ? <LoadingOutlined /> : <PlusOutlined />}
+        <div style={{ marginTop: 8 }}>Upload</div>
+      </div>
   );
 
   // @ts-ignore
@@ -251,284 +251,284 @@ const UserInfo: React.FC = () => {
   // @ts-ignore
   // @ts-ignore
   // @ts-ignore
-    // @ts-ignore
-    // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
   return (
-    <>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
-          <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>用户头像</Divider>
+      <>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
+            <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>用户头像</Divider>
+          </div>
         </div>
-      </div>
-      <Descriptions style={{ margin: '50px' }}>
-        <Row>
-          <Col style={avatarStyle}>
-            <Upload
-              name="file"
-              listType="picture-circle"
-              showUploadList={false}
-              action="http://localhost:8001/api/oss/upload"
-              // action="http://bi.kongshier.top/api/oss/upload"
-              beforeUpload={beforeUpload}
-              onChange={handleChange}
-            >
-              {imageUrl ? (
-                <img
-                  src={data?.userAvatar}
-                  alt="userAvatar"
-                  style={{ width: '200%', borderRadius: '50%', height: '180%' }}
-                />
-              ) : (
-                uploadButton
-              )}
-            </Upload>
-          </Col>
-        </Row>
-      </Descriptions>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
-          <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>智能图表|问题次数获取</Divider>
-        </div>
-      </div>
-      <Descriptions bordered size={'default'} contentStyle={{ fontWeight: 'bold', color: 'black' }}>
-        <Card style={{ textAlign: 'center' }} type="inner">
-          <Row gutter={16}>
-            <Col span={10} style={{ fontSize: 16, color: 'black' }}>
-              {'已使用：' + frequency?.totalFrequency + ' 次'}
-            </Col>
-            <Col span={4} style={{ fontSize: 16, color: 'black' }}>
-              {'剩余：' + frequency?.remainFrequency + ' 次'}
-            </Col>
-            <Col span={10}>
-              <Button style={{ margin: '5px' }} type="primary" onClick={showModal}>
-                充值
-              </Button>
-              <Modal
-                title="请输入充值次数"
-                open={isModalOpen}
-                onOk={handleOk}
-                onCancel={handleCancel}
+        <Descriptions style={{ margin: '50px' }}>
+          <Row>
+            <Col style={avatarStyle}>
+              <Upload
+                  name="file"
+                  listType="picture-circle"
+                  showUploadList={false}
+                  action="http://localhost:8001/api/oss/upload"
+                  // action="http://bi.kongshier.top/api/oss/upload"
+                  beforeUpload={beforeUpload}
+                  onChange={handleChange}
               >
-                <InputNumber min={1} max={1000} defaultValue={1} onChange={onChange} />
-              </Modal>
+                {imageUrl ? (
+                    <img
+                        src={data?.userAvatar}
+                        alt="userAvatar"
+                        style={{ width: '200%', borderRadius: '50%', height: '180%' }}
+                    />
+                ) : (
+                    uploadButton
+                )}
+              </Upload>
             </Col>
           </Row>
-        </Card>
-      </Descriptions>
-
-
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
-          <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>文本分析积分获取</Divider>
+        </Descriptions>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
+            <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>智能图表|问题次数获取</Divider>
+          </div>
         </div>
-      </div>
-      <Descriptions bordered size={'default'} contentStyle={{ fontWeight: 'bold', color: 'black' }}>
-        <Card style={{ textAlign: 'center' }} type="inner">
-          <Row gutter={16}>
-            <Col span={10} style={{ fontSize: 16, color: 'black' }}>
+        <Descriptions bordered size={'default'} contentStyle={{ fontWeight: 'bold', color: 'black' }}>
+          <Card style={{ textAlign: 'center' }} type="inner">
+            <Row gutter={16}>
+              <Col span={10} style={{ fontSize: 16, color: 'black' }}>
+                {'已使用：' + frequency?.totalFrequency + ' 次'}
+              </Col>
+              <Col span={4} style={{ fontSize: 16, color: 'black' }}>
+                {'剩余：' + frequency?.remainFrequency + ' 次'}
+              </Col>
+              <Col span={10}>
+                <Button style={{ margin: '5px' }} type="primary" onClick={showModal}>
+                  充值
+                </Button>
+                <Modal
+                    title="请输入充值次数"
+                    open={isModalOpen}
+                    onOk={handleOk}
+                    onCancel={handleCancel}
+                >
+                  <InputNumber min={1} max={1000} defaultValue={1} onChange={onChange} />
+                </Modal>
+              </Col>
+            </Row>
+          </Card>
+        </Descriptions>
+
+
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
+            <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>文本分析积分获取</Divider>
+          </div>
+        </div>
+        <Descriptions bordered size={'default'} contentStyle={{ fontWeight: 'bold', color: 'black' }}>
+          <Card style={{ textAlign: 'center' }} type="inner">
+            <Row gutter={16}>
+              <Col span={10} style={{ fontSize: 16, color: 'black' }}>
           <span>
             当前积分为：{creditInfo}
           </span>
-            </Col>
-            <Col span={10}>
+              </Col>
+              <Col span={10}>
           <span>
             <Button
-              type={"primary"}
-              onClick={signDaily}
-              style={{ marginLeft: '150px' }}
-              disabled={submitting}
+                type={"primary"}
+                onClick={signDaily}
+                style={{ marginLeft: '150px' }}
+                disabled={submitting}
             >
               每日签到
             </Button>
           </span>
-            </Col>
-            <Col span={4}></Col> {/* Empty column for spacing */}
-          </Row>
-        </Card>
-      </Descriptions>
+              </Col>
+              <Col span={4}></Col> {/* Empty column for spacing */}
+            </Row>
+          </Card>
+        </Descriptions>
 
 
 
 
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
-          <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>用户信息</Divider>
-        </div>
-      </div>
-      <Descriptions
-        bordered
-        column={1}
-        size={'default'}
-        contentStyle={{ fontWeight: 'bold', color: 'black', maxWidth: '200px' }}
-      >
-        <Descriptions.Item style={{ textAlign: 'center' }} label="用户名：">
-          {myUser.userName}
-        </Descriptions.Item>
-        <Descriptions.Item style={{ textAlign: 'center' }} label="性别：">
-          {myUser.gender}
-        </Descriptions.Item>
-        <Descriptions.Item style={{ textAlign: 'center' }} label="用户编号：">
-          {userId}
-        </Descriptions.Item>
-        <Descriptions.Item style={{ textAlign: 'center' }} label="用户账户：">
-          {myUser.userAccount}
-        </Descriptions.Item>
-        <Descriptions.Item style={{ textAlign: 'center' }} label="我的身份：">
-          {myUser.userRole === 'user' ? '普通用户' : '管理员'}
-        </Descriptions.Item>
-        <Descriptions.Item style={{ textAlign: 'center' }} label="手机号码：">
-          {myUser.phone === null ? '尚未填写手机号码！' : myUser.phone}
-        </Descriptions.Item>
-        <Descriptions.Item style={{ textAlign: 'center' }} label="我的邮箱：">
-          {myUser.email === null ? '尚未填写邮箱！' : myUser.email}
-        </Descriptions.Item>
-        <Descriptions.Item style={{ textAlign: 'center'}} label="我的状态：">
-          {/*@ts-ignore*/}
-          {myUser.userStatus === 0 ? '正常在线' : '账号异常'}
-        </Descriptions.Item>
-        <Descriptions.Item style={{ textAlign: 'center' }} label="用户创建时间：">
-          {myUser.createTime}
-        </Descriptions.Item>
-        <Descriptions.Item style={{ textAlign: 'center' }} label="用户更新时间：">
-          {myUser.updateTime}
-        </Descriptions.Item>
-      </Descriptions>
-
-      <ModalForm<API.UserUpdateMyRequest>
-        title="修改我的信息"
-        trigger={
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Button
-              type="primary"
-              shape="round"
-              size="large"
-              color="#007BFF"
-              block
-              style={{ margin: '50px', width: '250px' }}
-            >
-              修改个人信息
-            </Button>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
+            <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>用户信息</Divider>
           </div>
-        }
-        autoFocusFirstInput
-        modalProps={{
-          destroyOnClose: true,
-          onCancel: () => console.log('run'),
-        }}
-        submitTimeout={2000}
-        onFinish={async (values) => {
-          await waitTime(1000);
-          try {
-            const isModify = await updateMyInfoUsingPOST(values);
-            if (isModify) {
-              setSuccessModalVisible(true); // 打开修改成功弹窗
-            } else {
-              message.error('修改失败！');
-            }
-          } catch (error) {
-            message.error('修改失败！');
-          }
-          return false;
-        }}
+        </div>
+        <Descriptions
+            bordered
+            column={1}
+            size={'default'}
+            contentStyle={{ fontWeight: 'bold', color: 'black', maxWidth: '200px' }}
+        >
+          <Descriptions.Item style={{ textAlign: 'center' }} label="用户名：">
+            {myUser.userName}
+          </Descriptions.Item>
+          <Descriptions.Item style={{ textAlign: 'center' }} label="性别：">
+            {myUser.gender}
+          </Descriptions.Item>
+          <Descriptions.Item style={{ textAlign: 'center' }} label="用户编号：">
+            {userId}
+          </Descriptions.Item>
+          <Descriptions.Item style={{ textAlign: 'center' }} label="用户账户：">
+            {myUser.userAccount}
+          </Descriptions.Item>
+          <Descriptions.Item style={{ textAlign: 'center' }} label="我的身份：">
+            {myUser.userRole === 'user' ? '普通用户' : '管理员'}
+          </Descriptions.Item>
+          <Descriptions.Item style={{ textAlign: 'center' }} label="手机号码：">
+            {myUser.phone === null ? '尚未填写手机号码！' : myUser.phone}
+          </Descriptions.Item>
+          <Descriptions.Item style={{ textAlign: 'center' }} label="我的邮箱：">
+            {myUser.email === null ? '尚未填写邮箱！' : myUser.email}
+          </Descriptions.Item>
+          <Descriptions.Item style={{ textAlign: 'center'}} label="我的状态：">
+            {/*@ts-ignore*/}
+            {myUser.userStatus === 0 ? '正常在线' : '账号异常'}
+          </Descriptions.Item>
+          <Descriptions.Item style={{ textAlign: 'center' }} label="用户创建时间：">
+            {myUser.createTime}
+          </Descriptions.Item>
+          <Descriptions.Item style={{ textAlign: 'center' }} label="用户更新时间：">
+            {myUser.updateTime}
+          </Descriptions.Item>
+        </Descriptions>
 
-      >
-        {renderSuccessModal()}
-        <ProForm.Group>
-          <ProFormText
-            width="md"
-            name="userName"
-            label="用户名"
-            placeholder="请输入用户名"
-            initialValue={myUser.userName}
-            rules={[
-              {
-                required: true,
-                message: '请输入选择用户头像!',
-              },
-            ]}
-          />
-          <ProFormText
-            width="md"
-            name="userAccount"
-            label="账号名称"
-            placeholder="你想修改的账号名称"
-            initialValue={myUser.userAccount}
-            rules={[
-              {
-                required: true,
-                message: '请输入选择用户头像!',
-              },
-            ]}
-          />
-          <ProFormText
-            width="md"
-            name="id"
-            label="用户编号"
-            placeholder="修改修改后的密码"
-            initialValue={userId}
-            disabled
-          />
-          <ProFormText
-            width="md"
-            name="userPassword"
-            label="修改密码"
-            placeholder="修改修改后的密码"
-            initialValue={myUser.userPassword}
-            rules={[
-              {
-                required: true,
-                message: '请输入选择用户头像!',
-              },
-            ]}
-          />
-          <ProFormText
-            width="md"
-            name="phone"
-            label="修改手机号码"
-            placeholder="修改手机号码密码"
-            initialValue={myUser.phone}
-          />
-          <ProFormSelect
-            width="md"
-            name="gender"
-            label="修改性别"
-            placeholder="修改我的性别"
-            options={selectGender}
-            initialValue={myUser.gender}
-          />
-          <ProFormText
-            width="md"
-            name="email"
-            label="修改邮箱"
-            placeholder="修改修改后的邮箱"
-            initialValue={myUser.email}
-          />
-          <ProFormText
-            width="md"
-            name="userCode"
-            label="修改我的编码"
-            placeholder="输入修改后的编码"
-            initialValue={myUser.userCode}
-          />
-          <ProFormSelect
-            name="userAvatar"
-            fieldProps={{
-              size: 'large',
+        <ModalForm<API.UserUpdateMyRequest>
+            title="修改我的信息"
+            trigger={
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Button
+                    type="primary"
+                    shape="round"
+                    size="large"
+                    color="#007BFF"
+                    block
+                    style={{ margin: '50px', width: '250px' }}
+                >
+                  修改个人信息
+                </Button>
+              </div>
+            }
+            autoFocusFirstInput
+            modalProps={{
+              destroyOnClose: true,
+              onCancel: () => console.log('run'),
             }}
-            label="修改头像"
-            options={selectAvatarUrl}
-            placeholder={'请选择用户头像 '}
-            initialValue={myUser.userAvatar}
-            rules={[
-              {
-                required: true,
-                message: '请输入选择用户头像!',
-              },
-            ]}
-          />
-        </ProForm.Group>
-      </ModalForm>
-    </>
+            submitTimeout={2000}
+            onFinish={async (values) => {
+              await waitTime(1000);
+              try {
+                const isModify = await updateMyInfoUsingPOST(values);
+                if (isModify) {
+                  setSuccessModalVisible(true); // 打开修改成功弹窗
+                } else {
+                  message.error('修改失败！');
+                }
+              } catch (error) {
+                message.error('修改失败！');
+              }
+              return false;
+            }}
+
+        >
+          {renderSuccessModal()}
+          <ProForm.Group>
+            <ProFormText
+                width="md"
+                name="userName"
+                label="用户名"
+                placeholder="请输入用户名"
+                initialValue={myUser.userName}
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入选择用户头像!',
+                  },
+                ]}
+            />
+            <ProFormText
+                width="md"
+                name="userAccount"
+                label="账号名称"
+                placeholder="你想修改的账号名称"
+                initialValue={myUser.userAccount}
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入选择用户头像!',
+                  },
+                ]}
+            />
+            <ProFormText
+                width="md"
+                name="id"
+                label="用户编号"
+                placeholder="修改修改后的密码"
+                initialValue={userId}
+                disabled
+            />
+            <ProFormText
+                width="md"
+                name="userPassword"
+                label="修改密码"
+                placeholder="修改修改后的密码"
+                initialValue={myUser.userPassword}
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入选择用户头像!',
+                  },
+                ]}
+            />
+            <ProFormText
+                width="md"
+                name="phone"
+                label="修改手机号码"
+                placeholder="修改手机号码密码"
+                initialValue={myUser.phone}
+            />
+            <ProFormSelect
+                width="md"
+                name="gender"
+                label="修改性别"
+                placeholder="修改我的性别"
+                options={selectGender}
+                initialValue={myUser.gender}
+            />
+            <ProFormText
+                width="md"
+                name="email"
+                label="修改邮箱"
+                placeholder="修改修改后的邮箱"
+                initialValue={myUser.email}
+            />
+            <ProFormText
+                width="md"
+                name="userCode"
+                label="修改我的编码"
+                placeholder="输入修改后的编码"
+                initialValue={myUser.userCode}
+            />
+            <ProFormSelect
+                name="userAvatar"
+                fieldProps={{
+                  size: 'large',
+                }}
+                label="修改头像"
+                options={selectAvatarUrl}
+                placeholder={'请选择用户头像 '}
+                initialValue={myUser.userAvatar}
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入选择用户头像!',
+                  },
+                ]}
+            />
+          </ProForm.Group>
+        </ModalForm>
+      </>
   );
 };
 

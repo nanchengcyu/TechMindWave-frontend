@@ -26,7 +26,7 @@ const Welcome: React.FC = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  // @ts-ignore
+
   return (
     <PageContainer content={'欢迎来到南城余的TechMindWave平台'}>
       <Card>

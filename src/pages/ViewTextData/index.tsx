@@ -103,7 +103,7 @@ const MyTextPageInfo: React.FC = () => {
   };
 
   /**
-  双向绑定
+   双向绑定
    */
   const handleMdChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     console.log('Change:', e.target.value);
@@ -113,64 +113,64 @@ const MyTextPageInfo: React.FC = () => {
 
 
   return (
-    <div className="my-chart-page">
-      <div className="margin-16"/>
-      <Row gutter={24}>
-        <Col span={12}>
-          <Card style={{width: '100%'}}>
-            <Meta
-              avatar={<Avatar src={currentUser && currentUser.userAvatar}/>}
-              title={textTaskInfo?.name}
-              description={
-                textTaskInfo?.status==='succeed'&&<>
-                <Button type={"primary"} style={{margin:"5px",float:"right"}} onClick={saveText} icon={<RedoOutlined />}>保存</Button>
+      <div className="my-chart-page">
+        <div className="margin-16"/>
+        <Row gutter={24}>
+          <Col span={12}>
+            <Card style={{width: '100%'}}>
+              <Meta
+                  avatar={<Avatar src={currentUser && currentUser.userAvatar}/>}
+                  title={textTaskInfo?.name}
+                  description={
+                      textTaskInfo?.status==='succeed'&&<>
+                        <Button type={"primary"} style={{margin:"5px",float:"right"}} onClick={saveText} icon={<RedoOutlined />}>保存</Button>
+                      </>
+                  }
+              />
+              <TextArea autoSize showCount value={textInfo} style={{margin:'5px',float:"right"}} onChange={handleMdChange} />
+            </Card>
+            {
+                textTaskInfo?.status==='failed'&&<>
+                  <Button type={"primary"} style={{margin:"5px"}} onClick={rebuild} icon={<RedoOutlined />}>重新生成</Button>
+                </>
+            }
+          </Col>
+          <Col span={12}>
+            <Card style={{width: '100%'}}>
+              <Meta
+                  title="文本展示"
+                  description={textTaskInfo?.textType ? '文本类型：' + textTaskInfo?.textType : undefined}
+              />
+              <ReactMarkdown
+                  className='markdown-body'
+                  children={textInfo}
+                  remarkPlugins={[remarkGfm, { singleTilde: false }]}
+                  rehypePlugins={[rehypeRaw]}
+                  components={{
+                    code({ node, inline, className, children, ...props }) {
+                      const match = /language-(\w+)/.exec(className || '')
+                      return !inline && match ? (
+                          <SyntaxHighlighter
+                              children={String(children).replace(/\n$/, '')}
+                              style={tomorrow}
+                              language={match[1]}
+                              PreTag="div"
+                              {...props}
+                          />
+                      ) : (
+                          <code className={className} {...props}>
+                            {children}
+                          </code>
+                      )
+                    }
+                  }}
+              />
+              <>
               </>
-              }
-            />
-            <TextArea autoSize showCount value={textInfo} style={{margin:'5px',float:"right"}} onChange={handleMdChange} />
-          </Card>
-          {
-          textTaskInfo?.status==='failed'&&<>
-            <Button type={"primary"} style={{margin:"5px"}} onClick={rebuild} icon={<RedoOutlined />}>重新生成</Button>
-          </>
-         }
-        </Col>
-        <Col span={12}>
-          <Card style={{width: '100%'}}>
-            <Meta
-              title="文本展示"
-              description={textTaskInfo?.textType ? '文本类型：' + textTaskInfo?.textType : undefined}
-            />
-            <ReactMarkdown
-              className='markdown-body'
-              children={textInfo}
-              remarkPlugins={[remarkGfm, { singleTilde: false }]}
-              rehypePlugins={[rehypeRaw]}
-              components={{
-                code({ node, inline, className, children, ...props }) {
-                  const match = /language-(\w+)/.exec(className || '')
-                  return !inline && match ? (
-                    <SyntaxHighlighter
-                      children={String(children).replace(/\n$/, '')}
-                      style={tomorrow}
-                      language={match[1]}
-                      PreTag="div"
-                      {...props}
-                    />
-                  ) : (
-                    <code className={className} {...props}>
-                      {children}
-                    </code>
-                  )
-                }
-              }}
-            />
-            <>
-            </>
-          </Card>
-        </Col>
-      </Row>
-    </div>
+            </Card>
+          </Col>
+        </Row>
+      </div>
   );
 };
 export default MyTextPageInfo;
