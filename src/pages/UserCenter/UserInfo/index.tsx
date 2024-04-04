@@ -245,14 +245,7 @@ const UserInfo: React.FC = () => {
       </div>
   );
 
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
+
   return (
       <>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -287,7 +280,7 @@ const UserInfo: React.FC = () => {
         </Descriptions>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
-            <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>智能图表|问题次数获取</Divider>
+            <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>智能图文|问题次数获取</Divider>
           </div>
         </div>
         <Descriptions bordered size={'default'} contentStyle={{ fontWeight: 'bold', color: 'black' }}>
@@ -317,35 +310,6 @@ const UserInfo: React.FC = () => {
         </Descriptions>
 
 
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
-            <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>文本分析积分获取</Divider>
-          </div>
-        </div>
-        <Descriptions bordered size={'default'} contentStyle={{ fontWeight: 'bold', color: 'black' }}>
-          <Card style={{ textAlign: 'center' }} type="inner">
-            <Row gutter={16}>
-              <Col span={10} style={{ fontSize: 16, color: 'black' }}>
-          <span>
-            当前积分为：{creditInfo}
-          </span>
-              </Col>
-              <Col span={10}>
-          <span>
-            <Button
-                type={"primary"}
-                onClick={signDaily}
-                style={{ marginLeft: '150px' }}
-                disabled={submitting}
-            >
-              每日签到
-            </Button>
-          </span>
-              </Col>
-              <Col span={4}></Col> {/* Empty column for spacing */}
-            </Row>
-          </Card>
-        </Descriptions>
 
 
 

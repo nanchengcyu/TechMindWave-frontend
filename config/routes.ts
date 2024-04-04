@@ -23,10 +23,9 @@
 
   {
     path: '/text',
-    name: '智能文本',
+    name: '智能文章',
     icon: 'FileMarkdownTwoTone',
     routes: [
-      { path: '/text/add_text', name: '智能分析文本(异步）',component: './Text/AddTextMQ' },
       { path: '/text/add_essay', name: '智能文章生成',component: './Text/AddEssay' },
       { component: './404' },
 
@@ -46,10 +45,9 @@
 
   {
     path: '/text_manage',
-    name: '文本中心',
+    name: '文章中心',
     icon: 'FolderOpenTwoTone',
     routes: [
-      { path: '/text_manage/gen_text', name: '查看文本',component: './TextManage/GenTextMQ' },
       { path: '/text_manage/gen_essay', name: '查看文章',component: './TextManage/GenEssay' },
       { component: './404' },
 
@@ -57,7 +55,6 @@
   },
 
   { path: '/viewChartData/:id', icon: 'checkCircle', component: './ViewChartData', name: '查看图表', hideInMenu: true,  },
-  { path: '/viewTextData/:id', icon: 'checkCircle', component: './ViewTextData', name: '查看文本', hideInMenu: true,  },
 
   {
     path: '/person',
