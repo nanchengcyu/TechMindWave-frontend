@@ -101,7 +101,7 @@ const AddChart: React.FC = () => {
         </Col>
 
         <Col span={12}>
-          <Card style={{ height: '400px', overflowY: 'scroll' }}>
+          <Card style={{ height: '600px', overflowY: 'scroll' }}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
                 <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>文章内容</Divider>
