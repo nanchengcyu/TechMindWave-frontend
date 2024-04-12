@@ -21,36 +21,17 @@
     ],
   },
 
+  { path: '/essay', name: '智能文章', icon: 'FileWordTwoTone', component: './Essay' },
+  { path: '/answer', name: '智能问答', icon: 'BulbTwoTone', component: './Answer' },
   {
-    path: '/text',
-    name: '智能文章',
-    icon: 'FileMarkdownTwoTone',
-    routes: [
-      { path: '/text/add_essay', name: '智能文章生成',component: './Text/AddEssay' },
-      { component: './404' },
-
-    ],
-  },
-  {
-    path: '/ai_question',
-    name: ' 智能回答',
-    icon: 'MessageTwoTone',
-    routes: [
-      { path: '/ai_question/assistant', name: '智能分析问题', icon: 'smile', component: './AiChatAssistant/AddChat' },
-      { path: '/ai_question/history', name: '智能分析结果', icon: 'smile', component: './AiChatAssistant/AiChatManage' },
-    ],
-  },
-  { path: '/gen_chart', name: '图表中心', icon: 'FundTwoTone', component: './ChartManage' },
-
-
-  {
-    path: '/text_manage',
-    name: '文章中心',
+    path: '/manage',
+    name: '管理中心',
     icon: 'FolderOpenTwoTone',
     routes: [
-      { path: '/text_manage/gen_essay', name: '查看文章',component: './TextManage/GenEssay' },
+      { path: '/manage/chart_manage', name: '图表管理',component: './Manage/ChartManage' },
+      { path: '/manage/essay_manage', name: '文章管理',component: './Manage/EssayManage' },
+      { path: '/manage/answer_manage', name: '问答管理',component: './Manage/AnswerManage' },
       { component: './404' },
-
     ],
   },
 

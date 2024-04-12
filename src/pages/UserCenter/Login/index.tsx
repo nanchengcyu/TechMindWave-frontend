@@ -79,7 +79,7 @@ const Login: React.FC = () => {
             logo={<img alt="logo" src={SYSTEM_LOGO}/>}
             title="TechMindWave"
 
-              subTitle='创新智能，科技引领'
+            subTitle='创新智能，科技引领'
 
             submitter={{
               searchConfig: {
