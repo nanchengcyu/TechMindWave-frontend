@@ -5,11 +5,10 @@ import {
   selectUserRole,
   selectUserStatus,
   SYSTEM_LOGO,
-  WELCOME,
 } from '@/constants';
 import { addUserUsingPOST, getLoginUserUsingGET } from '@/services/nanchengyubi/UserController';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import {LoginForm, ProForm, ProFormText} from '@ant-design/pro-components';
+import {LoginForm, ProFormText} from '@ant-design/pro-components';
 import { ProFormSelect } from '@ant-design/pro-form/lib';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
 import { Helmet, useModel } from '@umijs/max';

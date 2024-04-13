@@ -1,22 +1,22 @@
 import Footer from '@/components/Footer';
-import {LOGIN_BACKGROUND_IMAGE, REGISTER_BACKGROUND_IMAGE, SYSTEM_LOGO, WELCOME} from '@/constants';
+import {SYSTEM_LOGO} from '@/constants';
 
-import { getLoginUserUsingGET, userRegisterUsingPOST } from '@/services/nanchengyubi/UserController';
-import { Link } from '@@/exports';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import {  ProFormText } from '@ant-design/pro-components';
-import { useEmotionCss } from '@ant-design/use-emotion-css';
-import { Helmet, history, useModel } from '@umijs/max';
+import {getLoginUserUsingGET, userRegisterUsingPOST} from '@/services/nanchengyubi/UserController';
+import {Link} from '@@/exports';
+import {LockOutlined, UserOutlined} from '@ant-design/icons';
+import {ProFormText} from '@ant-design/pro-components';
+import {useEmotionCss} from '@ant-design/use-emotion-css';
+import {Helmet, history, useModel} from '@umijs/max';
 import {Button, message, Tabs} from 'antd';
-import React, { useState } from 'react';
-import { flushSync } from 'react-dom';
+import React, {useState} from 'react';
+import {flushSync} from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
 import {LoginFormPage} from "@ant-design/pro-form/lib";
 
 
 const Login: React.FC = () => {
   const [type, setType] = useState<string>('account');
-  const { setInitialState } = useModel('@@initialState');
+  const {setInitialState} = useModel('@@initialState');
 
   const containerClassName = useEmotionCss(() => {
     return {
@@ -26,7 +26,7 @@ const Login: React.FC = () => {
       overflow: 'auto',
       backgroundImage:
         "url('https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/V-_oS6r-i7wAAAAAAAAAAAAAFl94AQBr')",
-      backgroundSize: '100% 100%',
+      backgroundSize: '120% 100%',
     };
   });
   const fetchUserInfo = async () => {
@@ -68,14 +68,17 @@ const Login: React.FC = () => {
       </Helmet>
       <div
         style={{
+          backgroundImage: "url('/loginImage.jpg')",
           backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover', // 确保背景图片覆盖整个容器，且不重复
+          backgroundPosition: 'center', // 将图片居中显示
           width: '100%',
           height: '100%',
         }}
       >
         <LoginFormPage
-          backgroundImageUrl={REGISTER_BACKGROUND_IMAGE}
-          logo={<img alt="logo" src={SYSTEM_LOGO} />}
+          /*   backgroundImageUrl={REGISTER_BACKGROUND_IMAGE}*/
+          logo={<img alt="logo" src={SYSTEM_LOGO}/>}
           title="TechMindWave"
           subTitle='创新智能，科技引领'
 
@@ -106,7 +109,7 @@ const Login: React.FC = () => {
                 name="userAccount"
                 fieldProps={{
                   size: 'large',
-                  prefix: <UserOutlined />,
+                  prefix: <UserOutlined/>,
                 }}
                 placeholder={'请输入账户'}
                 rules={[
@@ -125,7 +128,7 @@ const Login: React.FC = () => {
                 name="userPassword"
                 fieldProps={{
                   size: 'large',
-                  prefix: <LockOutlined />,
+                  prefix: <LockOutlined/>,
                 }}
                 placeholder={'请输入密码'}
                 rules={[
@@ -144,7 +147,7 @@ const Login: React.FC = () => {
                 name="checkPassword"
                 fieldProps={{
                   size: 'large',
-                  prefix: <LockOutlined />,
+                  prefix: <LockOutlined/>,
                 }}
                 placeholder={'请再次输入密码'}
                 rules={[
@@ -170,7 +173,7 @@ const Login: React.FC = () => {
           </div>
         </LoginFormPage>
       </div>
-      <Footer />
+      <Footer/>
     </div>
   );
 };

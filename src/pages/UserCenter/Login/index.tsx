@@ -20,11 +20,11 @@ const Login: React.FC = () => {
       display: 'flex',
       flexDirection: 'column',
       height: '100vh',
-      overflow: 'hidden',
-      backgroundImage:
-        "url('https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/V-_oS6r-i7wAAAAAAAAAAAAAFl94AQBr')",
-      backgroundSize: 'cover',
-      backgroundPosition: 'center center', // 添加这一行以使背景图居中
+      overflow: 'auto',
+      backgroundSize: '100% 100%',
+     /* backgroundImage:
+        "url('https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/V-_oS6r-i7wAAAAAAAAAAAAAFl94AQBr')",*/
+      backgroundRepeat: 'no-repeat'
     };
   });
 
@@ -69,13 +69,16 @@ const Login: React.FC = () => {
         </Helmet>
         <div
           style={{
+            backgroundImage: "url('/loginImage.jpg')",
             backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover', // 确保背景图片覆盖整个容器，且不重复
+            backgroundPosition: 'center', // 将图片居中显示
             width: '100%',
             height: '100%',
           }}
         >
           <LoginFormPage
-            backgroundImageUrl={LOGIN_BACKGROUND_IMAGE}
+            /*backgroundImageUrl={LOGIN_BACKGROUND_IMAGE}*/
             logo={<img alt="logo" src={SYSTEM_LOGO}/>}
             title="TechMindWave"
 

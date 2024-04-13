@@ -1,8 +1,8 @@
-import { Button, Card, Col, Divider, Form, message, Row, Select, Space, Spin } from 'antd';
-import React, { useState } from 'react';
+import {Button, Card, Col, Divider, Form, message, Row, Select, Space, Spin} from 'antd';
+import React, {useState} from 'react';
 
 import TextArea from 'antd/es/input/TextArea';
-import { ESSAY_TYPE_SELECT} from "@/constants";
+import {ESSAY_TYPE_SELECT} from "@/constants";
 import './AddEssay.css';
 import {genEssayUsingPOST} from "@/services/nanchengyubi/essayController"; // 导入自定义的 CSS 样式文件
 
@@ -42,6 +42,7 @@ const AddChart: React.FC = () => {
     setSubmitting(false);
   };
 
+  // @ts-ignore
   return (
 
     <div className="add-chart">
@@ -49,16 +50,17 @@ const AddChart: React.FC = () => {
       <Row gutter={24}>
         <Col span={12}>
           <Card>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
-                <Divider style={{ fontSize: '18px', fontWeight: 'bold', color: 'white', margin: 0}}>智能分析</Divider>
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+              <div style={{background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block'}}>
+                <Divider
+                  style={{fontSize: '18px', fontWeight: 'bold', color: 'white', margin: 0}}>智能文章生成</Divider>
               </div>
             </div>
             <Form
               name="addChart"
               labelAlign="left"
-              labelCol={{ span: 4 }}
-              wrapperCol={{ span: 16 }}
+              labelCol={{span: 4}}
+              wrapperCol={{span: 16}}
               onFinish={onFinish}
               initialValues={{}}
             >
@@ -66,15 +68,19 @@ const AddChart: React.FC = () => {
               <Form.Item
                 name="essayName"
                 label="文章描述"
-                rules={[{ required: true, message: '请输入文章描述！' }]}
+                rules={[{required: true, message: '请输入文章描述！也可以直接输入文章标题即可生成'}]}
               >
-                <TextArea placeholder="请输入文章描述" />
+                <TextArea
+                  placeholder="请输入文章描述！也可以直接输入文章标题即可生成"
+                  autoSize={{minRows: 5}} // 设置最小行数为5
+                />
               </Form.Item>
+
 
               <Form.Item
                 name="essayType"
                 label="文章类型"
-                rules={[{ required: true, message: '请选择文章类型！' }]}
+                rules={[{required: true, message: '请选择文章类型！'}]}
               >
                 <Select
                   options={ESSAY_TYPE_SELECT}
@@ -82,7 +88,7 @@ const AddChart: React.FC = () => {
               </Form.Item>
 
 
-              <Form.Item wrapperCol={{ span: 16, offset: 4 }}>
+              <Form.Item wrapperCol={{span: 16, offset: 4}}>
                 <Space>
                   <Button
                     type="primary"
@@ -101,23 +107,23 @@ const AddChart: React.FC = () => {
         </Col>
 
         <Col span={12}>
-          <Card style={{ height: '600px', overflowY: 'scroll' }}>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
-                <Divider style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0 }}>文章内容</Divider>
+          <Card style={{height: '600px', overflowY: 'scroll'}}>
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+              <div style={{background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block'}}>
+                <Divider style={{fontSize: '20px', fontWeight: 'bold', color: 'white', margin: 0}}>文章内容</Divider>
               </div>
             </div>
             <Card>
               {essay?.essayContent ? (
-                <div style={{ padding: '10px', fontSize: '16px', whiteSpace: 'pre-line' }}>
+                <div style={{padding: '10px', fontSize: '16px', whiteSpace: 'pre-line'}}>
                   {essay.essayContent}
                 </div>
               ) : (
-                <div style={{ textAlign: 'center', fontSize: '16px' }}>
+                <div style={{textAlign: 'center', fontSize: '16px'}}>
                   请先在左边输入必填项，即可自动生成文章
                 </div>
               )}
-              <Spin spinning={submitting} size="large" />
+              <Spin spinning={submitting} size="large"/>
             </Card>
           </Card>
         </Col>

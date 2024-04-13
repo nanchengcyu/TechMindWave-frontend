@@ -60,7 +60,7 @@
       { path: '/admin/adduser', name: '添加用户', component: './Admin/AddUser' },
       { path: '/admin/chart_manage', name: '图表管理', component: './Admin/ChartManage' },
       { path: '/admin/essay_manage', name: '文章管理',component: './Admin/EssayManage' },
-      { path: '/admin/chat_manage', name: '对话管理', component: './Admin/AiChatManage' },
+      { path: '/admin/answer_manage', name: '问答管理', component: './Admin/AnswerManage' },
       { path: '/admin/user_order_manage', name: '订单管理', component: './Admin/UserOrderManage' },
       { path: '/admin/user_pay_order_manage', name: '管理员支付订单', component: './Admin/UserPayOrderManage' },
       { path: '/admin/user_pay_info_manage', name: '支付信息结果查询', component: './Admin/UserPayInfoManage' },

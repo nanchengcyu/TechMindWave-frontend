@@ -1,10 +1,9 @@
-import { HeartTwoTone, SmileTwoTone } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-components';
 import '@umijs/max';
 import {Alert, Card, Divider, Typography} from 'antd';
 import React from 'react';
 
-const { Title, Paragraph } = Typography;
+const { Title } = Typography;
 
 /**
  *
@@ -48,10 +47,10 @@ const Admin: React.FC = () => {
           2. 调用平台所有接口服务
         </Title>
         <Title level={4} style={{color:"#007BFF"}}>
-          3. 更好进行图表管理
+          3. 更好进行图表、文章、问答管理
         </Title>
         <Title level={4} style={{color:"#007BFF"}}>
-          4. 可以查看所有用户生成的图表
+          4. 可以查看所有用户生成的图表、文章、问答
         </Title>
         <Title level={4} style={{color:"#007BFF"}}>
           5. 管理用户的订单
