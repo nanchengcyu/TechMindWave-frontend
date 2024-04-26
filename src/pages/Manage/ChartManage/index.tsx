@@ -75,6 +75,7 @@ const MyChartPage: React.FC = () => {
           });
 
           if (!shouldRefresh) {
+            // @ts-ignore
             clearInterval(refreshTimer.current);
           }
         }
@@ -94,12 +95,14 @@ const MyChartPage: React.FC = () => {
 
   // 每 10 秒钟自动刷新一次
   useEffect(() => {
+    // @ts-ignore
     refreshTimer.current = setInterval(() => {
       if (isGlobalEnabled) {
         loadData();
       }
     }, 10000);
     return () => {
+      // @ts-ignore
       clearInterval(refreshTimer.current);
     };
   }, [isGlobalEnabled]);
