@@ -34,20 +34,7 @@ const Welcome: React.FC = () => {
             marginBottom: 48,
           }}
         />
-        <div style={{ textAlign: 'center', marginBottom: 16 }}>
-          <Divider style={{ fontSize: 24, fontWeight: 'bold', color: 'white', backgroundColor: '#333' }}>
-            生活照片展示
-          </Divider>
-        </div>
-        <Paragraph style={{ color: '#006fff', textAlign: 'center' }}>
-          <Carousel autoplay autoplaySpeed={10000}>
-            {loadedImages.map((image, index) => (
-              <div key={index}>
-                <Image src={image.default} />
-              </div>
-            ))}
-          </Carousel>
-        </Paragraph>
+
         <Typography.Title level={1} style={{ textAlign: 'center' }}>
           <Divider style={{ fontSize: 24, fontWeight: 'bold', color: 'white', backgroundColor: '#333' }}>
             TechMindWave平台
@@ -75,6 +62,21 @@ const Welcome: React.FC = () => {
         <Paragraph >
           <pre>{tedianContent}</pre>
         </Paragraph>
+        <div style={{ textAlign: 'center', marginBottom: 16 }}>
+          <Divider style={{ fontSize: 24, fontWeight: 'bold', color: 'white', backgroundColor: '#333' }}>
+            科技照片展示
+          </Divider>
+        </div>
+        <Paragraph style={{ color: '#006fff', textAlign: 'center' }}>
+          <Carousel autoplay autoplaySpeed={10000}>
+            {loadedImages.map((image, index) => (
+              <div key={index}>
+                <Image src={image.default} />
+              </div>
+            ))}
+          </Carousel>
+        </Paragraph>
+
       </Card>
     </PageContainer>
   );
