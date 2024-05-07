@@ -186,7 +186,7 @@ const ChatManage: React.FC = () => {
                     <Divider/>
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                       <div style={{fontSize: '14px', color: 'gray'}}>
-                        {'ai回答时间：' + (item.createTime ? new Date(item.createTime).toLocaleString() : '未知时间')}
+                        {'回答时间：' + (item.createTime ? new Date(item.createTime).toLocaleString() : '未知时间')}
                       </div>
                     </div>
                     <Row justify={'end'}>

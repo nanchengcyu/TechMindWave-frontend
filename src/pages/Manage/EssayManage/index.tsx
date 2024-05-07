@@ -113,7 +113,7 @@ const MyEssayPage: React.FC = () => {
             <br/>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <div style={{ fontSize: '14px', color: 'gray' }}>
-                      {'图表生成时间：' + (item.createTime ? new Date(item.createTime).toLocaleString() : '未知时间')}
+                      {'文章生成时间：' + (item.createTime ? new Date(item.createTime).toLocaleString() : '未知时间')}
                   </div>
               </div>
 
