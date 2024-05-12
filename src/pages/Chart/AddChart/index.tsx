@@ -63,7 +63,7 @@ const AddChart: React.FC = () => {
           <Card>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <div style={{ background: '#007BFF', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>
-                <Divider style={{ fontSize: '18px', fontWeight: 'bold', color: 'white', margin: 0}}>智能分析</Divider>
+                <Divider style={{ fontSize: '18px', fontWeight: 'bold', color: 'white', margin: 0}}>图表</Divider>
               </div>
             </div>
             <Form

@@ -56,7 +56,7 @@ const ViewChart: React.FC = () => {
 
 
             <div style={{ whiteSpace: 'pre-wrap', overflow: 'auto' }}>
-              <p style={{ fontWeight: 'bold', textAlign: 'center' }}>
+              <p style={{ textAlign: 'center' }}>
                 {chart?.chartData}
               </p>
             </div>

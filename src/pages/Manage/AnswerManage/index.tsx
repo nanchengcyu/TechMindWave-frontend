@@ -170,7 +170,7 @@ const ChatManage: React.FC = () => {
 
 
                     <Divider style={{fontWeight: 'bold', color: 'blue', fontSize: '16px'}}>
-                      AI解答
+                      解答
                     </Divider>
                     <div style={{
                       maxHeight: '400px', // 限制最大高度为400px

@@ -9,20 +9,6 @@
     ],
   },
   { path: '/welcome', name: '首页', icon: 'HomeTwoTone', component: './Welcome' },
-
-  {
-    path: '/chart',
-    name: '智能图表',
-    icon: 'PieChartTwoTone',
-    routes: [
-      { path: '/chart/add_chart',icon: 'PieChartTwoTone', name: '智能分析图表（同步）',component: './Chart/AddChart' },
-      { path: '/chart/add_chart_async', icon: 'PieChartTwoTone',name: '智能分析图表（异步）', component: './Chart/AsyncAddChart' },
-      { component: './404' },
-    ],
-  },
-
-  { path: '/essay', name: '智能文章', icon: 'FileWordTwoTone', component: './Essay' },
-  { path: '/answer', name: '智能问答', icon: 'BulbTwoTone', component: './Answer' },
   {
     path: '/manage',
     name: '管理中心',
@@ -34,6 +20,21 @@
       { component: './404' },
     ],
   },
+
+  {
+    path: '/chart',
+    name: '图表',
+    icon: 'PieChartTwoTone',
+    routes: [
+      { path: '/chart/add_chart',icon: 'PieChartTwoTone', name: '智能分析图表（同步）',component: './Chart/AddChart' },
+      { path: '/chart/add_chart_async', icon: 'PieChartTwoTone',name: '智能分析图表（异步）', component: './Chart/AsyncAddChart' },
+      { component: './404' },
+    ],
+  },
+
+  { path: '/essay', name: '文章', icon: 'FileWordTwoTone', component: './Essay' },
+  { path: '/answer', name: '问答', icon: 'BulbTwoTone', component: './Answer' },
+
 
   { path: '/viewChartData/:id', icon: 'checkCircle', component: './ViewChartData', name: '查看图表', hideInMenu: true,  },
 
