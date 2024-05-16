@@ -1,10 +1,11 @@
-import {Button, Card, Divider, Form, message, Space} from 'antd';
+import {Button, Card, Divider, Form, message, Select, Space} from 'antd';
 import React, {useState} from 'react';
 
 import TextArea from 'antd/es/input/TextArea';
 import {ProForm} from "@ant-design/pro-form";
 import useForm = ProForm.useForm;
 import {aiAssistantUsingPOST} from "@/services/nanchengyubi/AiAssistantController";
+import {ANSWER_TYPE_SELECT, CHART_TYPE_SELECT} from "@/constants";
 
 const AddChat: React.FC = () => {
     const [form] = useForm();
@@ -71,18 +72,15 @@ const AddChat: React.FC = () => {
                         <TextArea placeholder="请输入你的分析需求，比如：我要怎么样更好的去学习Java？"/>
                     </Form.Item>
 
-                    <Form.Item
-                        name="questionType"
-                        label="问题类型"
-                        rules={[{required: true, message: '请选择输入问题类型！'},
-                            {
-                                min: 2,
-                                required: true,
-                                message: '问题类型不能为空！'
-                            }]}
-                    >
-                        <TextArea placeholder="请输入你的问题类型，比如：Java/Python/GO"/>
-                    </Form.Item>
+                  <Form.Item
+                    name="questionType"
+                    label="问题类型"
+                    rules={[{ required: true, message: '请选择问题类型！' }]}
+                  >
+                    <Select
+                      options={ANSWER_TYPE_SELECT}
+                    ></Select>
+                  </Form.Item>
 
                     <Form.Item wrapperCol={{span: 16, offset: 4}} style={{textAlign: "center"}}>
                         <Space>

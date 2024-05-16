@@ -121,9 +121,8 @@ const AddChart: React.FC = () => {
                   <a href="https://www.yuque.com/kcsshier/zpovmy/lab4hgt8rf9d6sia?singleDoc# 《TechMindWave系统测试数据下载》" target='_blank' rel="noreferrer" >
                     <Button
                       block
-                      shape='round'
                     >
-                      获取测试数据
+                      获取数据
                     </Button>
                   </a>
                 </Space>

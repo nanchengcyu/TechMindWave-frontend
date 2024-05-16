@@ -67,10 +67,14 @@ export const ESSAY_TYPE_SELECT = [
   { value: '散文', label: '散文' },
   { value: '诗歌', label: '诗歌' },
 
-
-
 ];
-
+export const ANSWER_TYPE_SELECT = [
+  { value: '事实性问题', label: '事实性问题' },
+  { value: '解释性问题', label: '解释性问题' },
+  { value: '比较性问题', label: '比较性问题' },
+  { value: '探索性问题', label: '探索性问题' },
+  { value: '开放性问题', label: '开放性问题' },
+];
 /**
  * 默认头像
  */

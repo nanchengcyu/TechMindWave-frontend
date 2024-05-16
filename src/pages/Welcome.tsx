@@ -2,10 +2,11 @@ import { IMAGES } from '@/constants';
 import { PageContainer } from '@ant-design/pro-components';
 import { Alert, Card, Carousel, Divider, Image, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
+import Footer from "@/components/Footer";
 
 const { Paragraph } = Typography;
 
-const blockContent = `TechMindWave平台——您的智能图文生成专家。无需深厚的数据分析背景，您也能轻松创建专业级别的内容。\n\n我们融合了AI技术和自动化工具，致力于为您提供快速、精确、且易于理解的数据洞察。探索TechMindWave，让复杂的数据分析变得简单而直观。`;
+const blockContent = `TechMindWave平台——您的智能图文生成专家。无需深厚的数据分析背景，您也能轻松创建专业级别的内容。\n\n系统致力于为您提供快速、精确、且易于理解的数据洞察。探索TechMindWave，让复杂的数据分析变得简单而直观。`;
 
 const BIIntroduce = `TechMindWave，引领人工智能的图文生成解决方案。\n\n我们的平台利用尖端的机器学习技术，能够迅速、准确地解读数据，生成图表、文章和问答内容。无论是商业报告还是学术研究，TechMindWave都能助您深入挖掘数据背后的故事，加速决策和研究过程。\n\n智能文本分析揭示关键信息和情感倾向，而强大的问题分析能力则为您提供即时的解答和建议。TechMindWave，您全面的智能助手，助力您在信息时代中快速获取优势。`;
 
@@ -21,6 +22,7 @@ const Welcome: React.FC = () => {
   }, []);
 
 
+  // @ts-ignore
   return (
     <PageContainer content={'欢迎来到南城余的TechMindWave平台'}>
       <Card>
@@ -76,7 +78,7 @@ const Welcome: React.FC = () => {
             ))}
           </Carousel>
         </Paragraph>
-
+        <Footer/>
       </Card>
     </PageContainer>
   );

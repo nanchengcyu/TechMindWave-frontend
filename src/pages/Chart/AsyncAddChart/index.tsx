@@ -111,9 +111,8 @@ const AsyncAddChart: React.FC = () => {
                  target='_blank'>
                 <Button
                   block
-                  shape='round'
                 >
-                  获取测试数据
+                  获取数据
                 </Button>
               </a>
             </Space>

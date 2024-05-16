@@ -99,7 +99,13 @@ const AddChart: React.FC = () => {
                     确定上传
                   </Button>
                   <Button htmlType="reset">重置内容</Button>
-
+                  <a href="https://www.yuque.com/nanchengcyu/dubfny/qgcc436qmi30z20e" target='_blank' rel="noreferrer" >
+                    <Button
+                      block
+                    >
+                      获取数据
+                    </Button>
+                  </a>
                 </Space>
               </Form.Item>
             </Form>
