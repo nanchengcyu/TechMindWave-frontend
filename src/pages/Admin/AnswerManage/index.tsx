@@ -122,8 +122,8 @@ const ChatManage: React.FC = () => {
           <List.Item key={item.id}>
             <Card style={{width: '100%'}}>
               <List.Item.Meta
-                avatar={<Avatar src={currentUser?.userAvatar}/>}
-                title={currentUser?.userName}
+                avatar={<Avatar src={item.user?.userAvatar}/>}
+                title={item.user?.userName}
               />
               <>
                 {item.questionStatus === 'wait' && (

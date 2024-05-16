@@ -140,9 +140,9 @@ const MyChartPage: React.FC = () => {
                     <Card style={{ width: '100%', maxWidth: '800px' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <List.Item.Meta
-                            avatar={<Avatar src={currentUser?.userAvatar} />}
-                            title={currentUser?.userName}
-                            description={item.chartType ? '图表类型：' + item.chartType : undefined}
+                          avatar={<Avatar src={item.user?.userAvatar}/>}
+                          title={item.user?.userName}
+                          description={item.chartType ? '图表类型：' + item.chartType : undefined}
                         />
 
                         <div>

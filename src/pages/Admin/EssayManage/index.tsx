@@ -105,8 +105,8 @@ const MyEssayPage: React.FC = () => {
             <Card style={{ height: '66vh', overflowY: 'auto' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <List.Item.Meta
-                  avatar={<Avatar src={currentUser?.userAvatar} />}
-                  title={currentUser?.userName}
+                  avatar={<Avatar src={item.user?.userAvatar}/>}
+                  title={item.user?.userName}
                 />
                 <Button danger onClick={() => handleDelete(item.id)}>删除</Button>
               </div>
