@@ -144,7 +144,7 @@ const ChatManage: React.FC = () => {
                 )}
                 {item.questionStatus === 'running' && (
                   <>
-                    <Result status="info" title="AI正在解答中...." subTitle={item.execMessage}/>
+                    <Result status="info" title="正在解答中...." subTitle={item.execMessage}/>
                     <Row justify={'end'}>
                       <Col>
                         <Button danger onClick={() => handleDelete(item.id)}>
@@ -169,7 +169,7 @@ const ChatManage: React.FC = () => {
 
 
                     <Divider style={{fontWeight: 'bold', color: 'blue', fontSize: '16px'}}>
-                      AI解答
+                      解答
                     </Divider>
                     <div style={{
                       maxHeight: '400px', // 限制最大高度为400px
@@ -200,7 +200,7 @@ const ChatManage: React.FC = () => {
                 )}
                 {item.questionStatus === 'failed' && (
                   <>
-                    <Result status="error" title="AI解答失败" subTitle={item.execMessage}/>
+                    <Result status="error" title="解答失败" subTitle={item.execMessage}/>
                     <Row justify="end">
                       <Col style={{paddingRight: '10px'}}>
                         <Button type="primary" onClick={() => message.warning('敬请期待')}>

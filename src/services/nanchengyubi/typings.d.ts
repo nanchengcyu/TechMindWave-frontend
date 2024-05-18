@@ -10,6 +10,7 @@ declare namespace API {
   };
 
   type AiAssistant = {
+    user: any;
     createTime?: string;
     execMessage?: string;
     id?: number;
@@ -371,6 +372,7 @@ declare namespace API {
   };
 
   type Chart = {
+    user: any;
     chartData?: string;
     chartName?: string;
     chartStatus?: string;
@@ -468,6 +470,7 @@ declare namespace API {
   };
 
   type Essay = {
+    user: any;
     createTime?: string;
     essayName?: string;
     essayType?: string;

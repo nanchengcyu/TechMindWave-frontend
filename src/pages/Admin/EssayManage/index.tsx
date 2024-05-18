@@ -70,7 +70,6 @@ const MyEssayPage: React.FC = () => {
   };
 
   // @ts-ignore
-  // @ts-ignore
   return (
     <div className="my-essay-page">
       <div className="margin-20">
